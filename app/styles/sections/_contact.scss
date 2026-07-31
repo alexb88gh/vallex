@@ -1,0 +1,149 @@
+.contact {
+  background: var(--accent);
+  color: #12140f;
+
+  .section-index {
+    color: #566c1d;
+
+    span {
+      color: #12140f;
+      border-color: rgba(18, 20, 15, 0.4);
+    }
+  }
+
+  .eyebrow {
+    color: #425600;
+  }
+
+  &-content {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 9vw;
+  }
+
+  &-intro {
+    h2 {
+      font-size: clamp(58px, 6.5vw, 106px);
+    }
+
+    > p:not(.eyebrow) {
+      font-family: var(--font-geist-sans);
+      line-height: 1.7;
+      max-width: 500px;
+      color: #394120;
+      margin: 36px 0;
+    }
+
+    > a {
+      display: inline-block;
+      border-bottom: 1px solid #12140f;
+      padding-bottom: 8px;
+      font-weight: 700;
+    }
+  }
+
+  form {
+    border: 1px solid rgba(18, 20, 15, 0.38);
+    padding: 42px;
+    background: rgba(238, 238, 231, 0.12);
+  }
+
+  label {
+    display: block;
+    border-bottom: 1px solid rgba(18, 20, 15, 0.35);
+    padding: 0 0 18px;
+    margin-bottom: 30px;
+
+    span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    color: #12140f;
+    background: transparent;
+    resize: vertical;
+    font-family: var(--font-geist-sans);
+    font-size: 18px;
+
+    &::placeholder {
+      color: #66752f;
+    }
+
+    &:focus {
+      box-shadow: 0 2px 0 #12140f;
+    }
+  }
+
+  .button-primary {
+    background: #12140f;
+    color: var(--accent);
+    border-color: #12140f;
+
+    &:hover {
+      background: transparent;
+      color: #12140f;
+    }
+  }
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: end;
+
+  small {
+    max-width: 230px;
+    line-height: 1.5;
+    color: #536527;
+  }
+}
+
+.form-success {
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border: 1px solid rgba(18, 20, 15, 0.38);
+  padding: 42px;
+  background: rgba(238, 238, 231, 0.12);
+
+  > span {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #12140f;
+    font-size: 28px;
+  }
+
+  h3 {
+    font-family: Impact, "Arial Narrow", sans-serif;
+    font-size: 56px;
+    text-transform: uppercase;
+    margin: 34px 0 16px;
+  }
+
+  p {
+    max-width: 420px;
+    line-height: 1.6;
+  }
+
+  button {
+    margin-top: 28px;
+    border: 0;
+    border-bottom: 1px solid #12140f;
+    background: none;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+}

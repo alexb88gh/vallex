@@ -1,0 +1,26 @@
+$transition-fast: 180ms ease;
+$breakpoint-tablet: 1180px;
+$breakpoint-mobile: 900px;
+$breakpoint-phone: 560px;
+
+@mixin interactive-accent($color: var(--accent)) {
+  transition:
+    color $transition-fast,
+    background $transition-fast,
+    border-color $transition-fast;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--bg);
+    background: $color;
+    border-color: $color;
+  }
+}
+
+@mixin section-title {
+  font-family: Impact, "Arial Narrow", Arial, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  margin: 0;
+}

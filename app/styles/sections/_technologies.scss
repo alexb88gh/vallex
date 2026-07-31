@@ -1,0 +1,140 @@
+@use "../tokens" as *;
+
+.technologies {
+  background: #1b1d19;
+}
+
+.tech {
+  &-heading {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 50px;
+    align-items: end;
+
+    > p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0 0 8px;
+    }
+  }
+
+  &-console {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    border: 1px solid var(--line);
+    margin-top: 70px;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &-card {
+    min-height: 180px;
+    color: var(--text);
+    background: transparent;
+    border: 0;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 22px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: background $transition-fast, color $transition-fast;
+
+    &:nth-child(4n) {
+      border-right: 0;
+    }
+
+    &:nth-child(n + 5) {
+      border-bottom: 0;
+    }
+
+    .tech-mark {
+      width: 58px;
+      height: 58px;
+      border: 1px solid var(--tech-color);
+      display: grid;
+      place-items: center;
+      color: var(--tech-color);
+      font-size: 22px;
+      font-weight: 800;
+      transition: transform $transition-fast, background $transition-fast, color $transition-fast;
+    }
+
+    > span:last-of-type {
+      font-size: 13px;
+    }
+
+    i {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    &:hover,
+    &:focus-visible,
+    &.active {
+      background: rgba(255, 255, 255, 0.05);
+      outline: 0;
+    }
+
+    &:hover .tech-mark,
+    &:focus-visible .tech-mark,
+    &.active .tech-mark {
+      transform: translateY(-4px);
+      background: var(--tech-color);
+      color: #111;
+    }
+  }
+
+  &-description {
+    border-left: 1px solid var(--line);
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+
+    > span,
+    small {
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+    }
+
+    h3 {
+      margin: 0;
+      font-family: var(--font-geist-sans);
+      font-size: 34px;
+    }
+
+    p {
+      color: #b8bbb2;
+      line-height: 1.7;
+      margin: 18px 0 34px;
+    }
+
+    small {
+      margin-top: auto;
+      color: var(--accent);
+    }
+  }
+}
+
+.active-mark {
+  width: 86px;
+  height: 86px;
+  margin: 60px 0 30px;
+  display: grid;
+  place-items: center;
+  background: var(--tech-color);
+  color: #10120f;
+  font-size: 30px;
+  font-weight: 800;
+}

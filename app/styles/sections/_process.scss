@@ -1,0 +1,108 @@
+@use "../tokens" as *;
+
+.process {
+  background: #eeeee7;
+  color: #151713;
+
+  .eyebrow {
+    color: #597600;
+  }
+
+  .section-index {
+    color: #6d7069;
+  }
+
+  &-content h2 {
+    max-width: 1100px;
+  }
+
+  &-track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 90px;
+    position: relative;
+
+    article {
+      padding: 0 34px 10px 0;
+      position: relative;
+
+      &:hover button {
+        background: var(--accent);
+        border-color: #759900;
+      }
+
+      > span {
+        display: block;
+        margin: 34px 0 20px;
+        font-size: 9px;
+        color: #71756d;
+      }
+
+      h3 {
+        font-family: var(--font-geist-sans);
+        font-size: 24px;
+        margin: 0 0 16px;
+      }
+
+      p {
+        color: #595d56;
+        font-family: var(--font-geist-sans);
+        line-height: 1.6;
+        max-width: 280px;
+      }
+    }
+
+    button {
+      width: 58px;
+      height: 58px;
+      border: 1px solid #9da099;
+      background: #eeeee7;
+      color: #151713;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      transition: background $transition-fast, color $transition-fast;
+
+      &:focus-visible {
+        background: var(--accent);
+        border-color: #759900;
+      }
+    }
+  }
+
+  &-line {
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 29px;
+    height: 1px;
+    background: #a6a9a1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 78%;
+      height: 1px;
+      background: #6f9100;
+    }
+  }
+
+  &-status {
+    margin-top: 76px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #6f9100;
+      box-shadow: 0 0 0 5px rgba(111, 145, 0, 0.15);
+    }
+  }
+}
