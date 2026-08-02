@@ -1,5 +1,5 @@
-import EarthIcon from "@/app/assets/earth.svg";
-import { HeroRoadmap } from "./hero-roadmap";
+import EarthIcon from '@/app/assets/earth.svg'
+import { HeroRoadmap } from './hero-roadmap'
 
 export default function HeroSection() {
   return (
@@ -28,8 +28,7 @@ export default function HeroSection() {
           бизнес вперёд
         </h1>
         <p className="hero-lead">
-          Проектируем и создаём быстрые, масштабируемые веб-сервисы — от идеи до
-          запуска.
+          Проектируем и создаём быстрые, масштабируемые веб-сервисы — от идеи до запуска.
         </p>
         <div className="hero-actions">
           <a className="button button-primary" href="#contact">
@@ -51,5 +50,5 @@ export default function HeroSection() {
 
       <HeroRoadmap />
     </section>
-  );
+  )
 }

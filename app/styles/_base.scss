@@ -1,8 +1,8 @@
-@use "tokens" as *;
+@use 'tokens' as *;
 
 :root {
   --font-geist-sans: Arial, Helvetica, sans-serif;
-  --font-geist-mono: "Courier New", Courier, monospace;
+  --font-geist-mono: 'Courier New', Courier, monospace;
   --bg: #151713;
   --bg-deep: #0f100e;
   --panel: #1b1e19;
@@ -26,13 +26,13 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-geist-mono), "Courier New", monospace;
+  font-family: var(--font-geist-mono), 'Courier New', monospace;
   overflow-x: hidden;
 }
 
 body {
   &::before {
-    content: "";
+    content: '';
     position: fixed;
     inset: 0;
     z-index: -1;

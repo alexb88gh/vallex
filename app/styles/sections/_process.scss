@@ -1,4 +1,4 @@
-@use "../tokens" as *;
+@use '../tokens' as *;
 
 .process {
   background: #eeeee7;
@@ -62,7 +62,9 @@
       position: relative;
       z-index: 2;
       cursor: pointer;
-      transition: background $transition-fast, color $transition-fast;
+      transition:
+        background $transition-fast,
+        color $transition-fast;
 
       &:focus-visible {
         background: var(--accent);
@@ -80,7 +82,7 @@
     background: #a6a9a1;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       width: 78%;

@@ -1,4 +1,4 @@
-@use "../tokens" as *;
+@use '../tokens' as *;
 
 .services {
   background: var(--bg-deep);
@@ -19,7 +19,9 @@
     gap: 24px;
     align-items: center;
     border-bottom: 1px solid var(--line);
-    transition: background $transition-fast, padding $transition-fast;
+    transition:
+      background $transition-fast,
+      padding $transition-fast;
 
     &:hover {
       background: rgba(199, 255, 46, 0.04);

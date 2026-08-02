@@ -1,4 +1,4 @@
-@use "../tokens" as *;
+@use '../tokens' as *;
 
 .technologies {
   background: #1b1d19;
@@ -44,7 +44,9 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    transition: background $transition-fast, color $transition-fast;
+    transition:
+      background $transition-fast,
+      color $transition-fast;
 
     &:nth-child(4n) {
       border-right: 0;
@@ -63,7 +65,10 @@
       color: var(--tech-color);
       font-size: 22px;
       font-weight: 800;
-      transition: transform $transition-fast, background $transition-fast, color $transition-fast;
+      transition:
+        transform $transition-fast,
+        background $transition-fast,
+        color $transition-fast;
     }
 
     > span:last-of-type {

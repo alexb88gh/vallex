@@ -67,10 +67,10 @@
     background: var(--text);
     transition: transform 180ms ease;
   }
-  .menu-button[aria-expanded="true"] span:first-child {
+  .menu-button[aria-expanded='true'] span:first-child {
     transform: translateY(4px) rotate(45deg);
   }
-  .menu-button[aria-expanded="true"] span:last-child {
+  .menu-button[aria-expanded='true'] span:last-child {
     transform: translateY(-4px) rotate(-45deg);
   }
   .nav {
