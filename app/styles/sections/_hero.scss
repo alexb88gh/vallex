@@ -252,7 +252,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../../assets/hero-grid-bg.png'), url('../../assets/hero-grid-bg-2.png');
+    background-image: url('../../assets/hero-grid-bg-2.png'), url('../../assets/hero-grid-bg.png');
 
     -webkit-mask-image:
       linear-gradient(to top, transparent, black 15%, black 100%, transparent),
@@ -295,12 +295,100 @@ h1 {
   }
 }
 
+.roadmap-signal {
+  --signal-size: 38px;
+  position: absolute;
+  top: calc(44% - (var(--signal-size) / 2));
+  left: calc(60% - (var(--signal-size) / 2));
+  width: var(--signal-size);
+  height: var(--signal-size);
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(199, 255, 46, 0.75);
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border: 1px solid rgba(199, 255, 46, 0.28);
+    border-radius: 50%;
+    opacity: 0;
+    animation: roadmap-signal-pulse 2.8s ease-out infinite;
+    will-change: transform, opacity;
+  }
+
+  &::before {
+    width: 58px;
+    height: 58px;
+  }
+
+  &::after {
+    width: 78px;
+    height: 78px;
+    border-color: rgba(199, 255, 46, 0.16);
+    animation-delay: 1.4s;
+  }
+}
+
+@keyframes roadmap-signal-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.45);
+  }
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+
+.roadmap-signal-core {
+  position: relative;
+  z-index: 1;
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(241, 240, 232, 0.82);
+  background: rgba(15, 16, 14, 0.8);
+  box-shadow: 0 0 16px rgba(199, 255, 46, 0.12);
+
+  i {
+    width: 17px;
+    height: 17px;
+    display: block;
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(199, 255, 46, 0.65);
+  }
+}
 .hero-step {
   position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 12px;
   z-index: 3;
+  width: 52px;
+  height: 52px;
+
+  .point {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    bottom: -8px;
+    right: -8px;
+    background-color: #11130f;
+    border: 1px solid var(--muted);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      background-color: var(--accent);
+    }
+  }
 }
 
 .hero-step strong {
@@ -312,162 +400,204 @@ h1 {
   background: var(--bg);
   font-family: Impact, 'Arial Narrow', sans-serif;
   font-size: 27px;
+  position: relative;
+  z-index: 10;
 }
 
 .hero-step span {
   font-size: 13px;
+  position: absolute;
+  top: 19px;
+  left: 62px;
 }
 
 .hero-step-1 {
-  left: 1%;
-  bottom: 18.5%;
+  left: calc(10% - 52px);
+  top: calc(80% - 52px);
 }
 
 .hero-step-2 {
-  left: 38%;
-  bottom: 44.5%;
+  left: calc(23% - 52px);
+  top: calc(60% - 52px);
 }
 .hero-step-3 {
-  left: 62.5%;
-  top: 24.5%;
+  left: calc(44% - 52px);
+  top: calc(44% - 52px);
 }
 .hero-step-4 {
-  right: 7%;
-  top: 10.5%;
+  left: calc(76% - 52px);
+  top: calc(20% - 52px);
 }
 
-// .roadmap-visual {
-//   position: absolute;
-//   inset: 0;
-//   width: 100%;
-//   height: 100%;
-//   color: rgba(216, 221, 210, 0.5);
-// }
+.hero-step {
+  transition: z-index 0s linear 420ms;
 
-// .roadmap-grid {
-//   opacity: 0.74;
-// }
+  strong,
+  .point {
+    transition:
+      color 180ms ease,
+      background-color 180ms ease,
+      border-color 180ms ease;
+  }
 
-// .roadmap-markers rect {
-//   fill: var(--accent);
-//   filter: drop-shadow(0 0 3px rgba(199, 255, 46, 0.45));
-// }
+  &:hover,
+  &:focus-visible {
+    z-index: 20;
+    transition-delay: 0s;
 
-// .roadmap-signal circle {
-//   fill: none;
-//   stroke: var(--accent);
-//   stroke-width: 1;
-//   opacity: 0.28;
-//   vector-effect: non-scaling-stroke;
-// }
+    strong {
+      color: var(--bg);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
 
-// .roadmap-signal rect {
-//   fill: var(--accent);
-//   filter: drop-shadow(0 0 8px rgba(199, 255, 46, 0.4));
-// }
+    .point {
+      background: var(--accent);
+      border-color: var(--accent);
 
-// .roadmap-route {
-//   position: absolute;
-//   inset: 0;
-//   width: 100%;
-//   height: 100%;
-//   overflow: visible;
-//   filter: drop-shadow(0 0 4px rgba(199, 255, 46, 0.25));
-//   animation: routeGlow 3.6s ease-in-out infinite alternate;
-// }
+      .dot {
+        background: var(--bg);
+      }
+    }
 
-// .roadmap-route rect {
-//   fill: var(--accent);
-//   vector-effect: non-scaling-stroke;
-// }
+    .step-message {
+      visibility: visible;
+      opacity: 1;
+      clip-path: inset(0 0 0 0);
+      transform: translateX(0);
+      pointer-events: auto;
+      transition:
+        clip-path 420ms cubic-bezier(0.16, 1, 0.3, 1),
+        transform 420ms cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 160ms ease,
+        visibility 0s;
+    }
 
-// @keyframes routeGlow {
-//   to {
-//     filter: drop-shadow(0 0 9px rgba(199, 255, 46, 0.55));
-//   }
-// }
+    .step-message::after {
+      animation: step-message-scan 650ms ease-out both;
+    }
+  }
+}
 
-// .roadmap-status {
-//   position: absolute;
-//   left: 36%;
-//   bottom: 16.5%;
-//   z-index: 3;
-//   display: flex;
-//   align-items: center;
-//   gap: 8px;
-//   margin: 0;
-//   color: var(--accent);
-//   font-size: 10px;
-//   font-weight: 700;
-//   letter-spacing: 0.04em;
-// }
+.step-message {
+  position: absolute;
+  top: -14px;
+  left: 82px;
+  width: 270px;
+  min-height: 116px;
+  padding: 17px 18px;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  color: var(--text);
+  background: rgba(15, 16, 14, 0.96);
+  border: 1px solid rgba(199, 255, 46, 0.78);
+  box-shadow:
+    0 0 0 1px rgba(199, 255, 46, 0.08),
+    0 16px 34px rgba(0, 0, 0, 0.35);
+  clip-path: inset(0 100% 0 0);
+  transform: translateX(-12px);
+  pointer-events: none;
+  transition:
+    clip-path 280ms cubic-bezier(0.7, 0, 0.84, 0),
+    transform 280ms ease,
+    opacity 100ms ease,
+    visibility 0s linear 280ms;
 
-// .roadmap-status i {
-//   width: 7px;
-//   height: 7px;
-//   border-radius: 50%;
-//   background: var(--accent);
-// }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+  }
 
-// .signal {
-//   position: absolute;
-//   left: 29.2%;
-//   bottom: 17.5%;
-//   width: 52px;
-//   height: 52px;
-//   border: 1px solid var(--accent);
-//   border-radius: 50%;
-//   display: grid;
-//   place-items: center;
-// }
+  &::before {
+    top: 8px;
+    right: 8px;
+    width: 26px;
+    height: 1px;
+    background: var(--accent);
+    box-shadow: -218px 90px 0 rgba(199, 255, 46, 0.42);
+  }
 
-// .signal::before,
-// .signal::after {
-//   content: "";
-//   position: absolute;
-//   border: 1px solid rgba(199, 255, 46, 0.3);
-//   border-radius: 50%;
-//   animation: pulse 2.2s ease-out infinite;
-// }
+  &::after {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 13px rgba(199, 255, 46, 0.75);
+    transform: translateX(-100%);
+  }
 
-// .signal::before {
-//   inset: -14px;
-// }
-// .signal::after {
-//   inset: -28px;
-//   animation-delay: 0.35s;
-// }
-// .signal b {
-//   width: 18px;
-//   height: 18px;
-//   background: var(--accent);
-// }
+  p {
+    position: relative;
+    z-index: 1;
+    margin: 11px 0 0;
+    color: #d9dbd3;
+    font-size: 12px;
+    line-height: 1.48;
+  }
+}
 
-// @keyframes pulse {
-//   0% {
-//     opacity: 1;
-//     transform: scale(0.85);
-//   }
-//   100% {
-//     opacity: 0;
-//     transform: scale(1.25);
-//   }
-// }
+.step-message-meta {
+  position: relative;
+  z-index: 1;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
 
-// .project-meta {
-//   position: absolute;
-//   right: 2%;
-//   bottom: 8%;
-//   display: grid;
-//   grid-template-columns: auto auto;
-//   gap: 5px 14px;
-//   border: 1px solid var(--line);
-//   padding: 15px 18px;
-//   font-size: 9px;
-//   color: var(--muted);
-// }
+.hero-step-4 .step-message {
+  right: 82px;
+  left: auto;
+  transform: translateX(12px);
+}
 
-// .project-meta b {
-//   color: #b8bbb2;
-//   font-weight: 400;
-// }
+@keyframes step-message-scan {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (hover: none) {
+  .step-message {
+    display: none;
+  }
+}
+.roadmap-status {
+  position: absolute;
+  left: 36%;
+  bottom: 16.5%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.project-meta {
+  position: absolute;
+  right: 10%;
+  bottom: 8%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px 14px;
+  padding: 15px 18px;
+  font-size: 12px;
+  color: var(--muted);
+  backdrop-filter: blur(3px);
+}
+
+.project-meta b {
+  color: #b8bbb2;
+  font-weight: 400;
+}

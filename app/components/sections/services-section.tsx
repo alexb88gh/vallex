@@ -1,6 +1,6 @@
 export default function ServicesSection() {
   return (
-    <section className="services section">
+    <section className="services section" id="area">
       <div className="section-index">
         <span>02</span>
         <p>ЧТО ДЕЛАЕМ</p>

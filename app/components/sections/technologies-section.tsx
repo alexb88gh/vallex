@@ -8,7 +8,7 @@ export default function TechnologiesSection() {
   return (
     <section className="technologies section" id="technologies">
       <div className="section-index">
-        <span>03</span>
+        <span>04</span>
         <p>ТЕХНОЛОГИИ</p>
       </div>
       <div className="tech-content">

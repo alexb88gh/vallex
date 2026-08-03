@@ -13,8 +13,8 @@ export default function Home() {
       <SiteHeader />
       <AboutSection />
       <ServicesSection />
-      <TechnologiesSection />
       <ProcessSection />
+      <TechnologiesSection />
       <ReviewsSection />
       <ContactSection />
       <SiteFooter />

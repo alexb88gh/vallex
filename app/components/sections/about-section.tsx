@@ -20,30 +20,46 @@ export default function AboutSection() {
           </p>
         </div>
         <div className="metrics">
-          <article>
-            <strong>8+</strong>
-            <span>
-              лет в коммерческой
-              <br />
-              веб-разработке
-            </span>
+          <article className="metric-primary">
+            <span className="metric-label left">ОПЫТ / 01</span>
+            <div className="metric-value-row">
+              <strong>8+</strong>
+              <p>
+                лет в коммерческой
+                <br />
+                веб-разработке
+              </p>
+            </div>
+            <i className="metric-route" aria-hidden="true" />
+            <p className="metric-tags">
+              ПРОДУКТЫ <b /> СЕРВИСЫ <b /> АВТОМАТИЗАЦИЯ
+            </p>
           </article>
-          <article>
-            <strong>360°</strong>
-            <span>
-              от аналитики
-              <br />
-              до запуска
-            </span>
+          <article className="metric-secondary">
+            <span className="metric-label">ПОЛНЫЙ ЦИКЛ / 02</span>
+            <div className="metric-value-row">
+              <strong>360°</strong>
+              <p>
+                от аналитики
+                <br />
+                до запуска
+              </p>
+            </div>
+            <i className="metric-route" aria-hidden="true" />
           </article>
-          <article>
-            <strong>01</strong>
-            <span>
-              ответственная команда
-              <br />
-              на весь проект
-            </span>
+          <article className="metric-tertiary">
+            <span className="metric-label">ОТВЕТСТВЕННОСТЬ / 03</span>
+            <div className="metric-value-row">
+              <strong>01</strong>
+              <p>
+                ответственная команда
+                <br />
+                на весь проект
+              </p>
+            </div>
+            <i className="metric-route" aria-hidden="true" />
           </article>
+          <i className="metrics-connector" aria-hidden="true" />
         </div>
       </div>
     </section>

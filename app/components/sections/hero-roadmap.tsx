@@ -24,25 +24,33 @@ export function HeroRoadmap() {
         </svg>
       </div>
 
+      <div className="roadmap-signal" aria-hidden="true">
+        <span className="roadmap-signal-core">
+          <i />
+        </span>
+      </div>
+
       {steps.map((step, index) => (
-        <div className={`hero-step hero-step-${index + 1}`} key={step.number}>
+        <div className={`hero-step hero-step-${index + 1}`} key={step.number} tabIndex={0}>
           <strong>{step.number}</strong>
           <span>{step.title}</span>
+          <div className="point">
+            <div className="dot"></div>
+          </div>
+          <div className="step-message">
+            <p>{step.text}</p>
+          </div>
         </div>
       ))}
 
-      {/*
-      <p className="roadmap-status" aria-hidden="true">
-        <i /> СТАТУС: АКТИВНО
-      </p>
-      <div className="project-meta">
+      <div className="project-meta scanner-block">
         <span>ПРОЕКТ:</span>
         <b>VALLEX</b>
         <span>РЕЖИМ:</span>
         <b>РАЗРАБОТКА</b>
         <span>СТАТУС:</span>
         <b>АКТИВНО</b>
-      </div> */}
+      </div>
     </div>
   )
 }
